@@ -1,0 +1,79 @@
+@font-face{
+    font-family: AlmaraiB;
+    src: url(resources/fonts/Almarai-Bold.ttf);
+}
+
+@font-face{
+    font-family: InterB;
+    src: url(resources/fonts/Inter/InterTight-Light.ttf);
+}
+
+
+
+.centeredH{
+    text-align: center;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    background-color: black;    
+}
+
+
+
+.navbar ul{
+    list-style-type: none;   
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.navbar a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    
+}
+
+.navbar a:hover{
+    background-color: rgba(255, 255, 255, 0.469);
+}
+
+.navbar li{    
+    float: left;
+    width: 100%;
+    font-family:  InterB;
+}
+
+.btn{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    align-items: center; 
+    margin-right: auto;
+    margin-left: 10px;
+    
+    
+    
+    
+}
+.logo {
+    height: 40px; 
+    float: right;
+    object-fit: contain;
+}
+
+.btntxt{
+    text-align: center;
+    margin-top: 4px;
+    margin-left: 1px;
+}
+
+
