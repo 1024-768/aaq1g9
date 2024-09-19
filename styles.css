@@ -76,4 +76,8 @@
     margin-left: 1px;
 }
 
+logo-container:hover{
+    cursor: pointer;
+}
+
 
