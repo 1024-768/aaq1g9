@@ -1,88 +1,145 @@
-@font-face{
-    font-family: AlmaraiB;
-    src: url(resources/fonts/Almarai-Bold.ttf);
-}
-
-@font-face{
-    font-family: InterB;
-    src: url(resources/fonts/Inter/InterTight-Light.ttf);
-}
-
-
-
-.centeredH{
-    text-align: center;
-    
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;            
-    background-color: black;    
-    margin: 10px dotted white;
-}
-
-
-
-.navbar ul{
-    list-style-type: none;   
+*{
     padding: 0;
     margin: 0;
-    overflow: hidden;
+}
+body{
+    background-color: black;
+}
+@font-face{
+    font-family: FiraCodeR;
+    src: url("files/fonts/Fira_code/FiraCode-Medium.ttf")
+}
+@font-face{
+    font-family: InterTightB;
+    src: url("files/fonts/InterTight/InterTightB.ttf");
+}
+
+.navbar{
     display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 15px;
+    border-bottom: 1px dashed white;
+    border-top: 1px dashed white;
+}
+.nav-left ul{
+    display: flex;
+}
+.nav-left a{
+    padding: 15px;
+}
+
+.nav-center ul{
+    display: flex;
+}
+
+.nav-right ul{
+    display: flex;
+}
+.nav-right a{
+    padding: 15px;
+}
+
+.navbar li{
+    list-style: none;
 }
 
 .navbar a{
-    color: rgb(255, 255, 255);
+    color: gray;
     text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
-    
+    font-family: FiraCodeR;
 }
-
 .navbar a:hover{
-    background-color: rgba(255, 255, 255, 0.469);
+    color: rgb(255, 255, 255);
+    transition: color 0.5s ease-in-out;
 }
-
-.navbar li{    
-    float: left;
-    width: 100%;
-    font-family:  InterB;
-}
-
-.btn{
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    cursor: pointer;
-    align-items: center; 
-    margin-right: auto;
+.button{
     margin-left: 10px;
-    
-    
-    
-    
+    width: 20px;
+    height: 20px;
+    background-color: gray;
 }
-.logo {
-    height: 40px; 
-    float: right;
-    object-fit: contain;
-}
-
-.btntxt{
-    text-align: center;
-    margin-top: 4px;
-    margin-left: 1px;
-}
-
-.logo-container:hover{
+.button:hover{
     cursor: pointer;
+    background-color: white;
+    transition: background-color 0.5s ease-in-out;
+    
 }
-
-.item{
+.vid-container{
+    position: relative; /*text STAY*/
+}
+.vid-container video{
+    
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    border-bottom: 1px dashed white;
+    
+}
+.vid-overlay {
+    font-family: InterTightB;
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 20px; /*margin*/
+    left: 20px;
+    
+    transition: opacity 0.5s ease;
+    opacity: 0;
     
 }
 
+.vid-container:hover .vid-overlay {
+    opacity: 1;
+}
 
+/*SCROLL ANIMATION #####################################################################################*/
+.scroll-wrap{
+    border:1px dashed rgb(255, 255, 255);
+    width: 200px;
+    height: 20px;
+    max-width: 500px;
+    margin-inline: auto;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;  
+    left: px;
+    margin: 0 20px;
+
+}
+@keyframes scrollLeft{    
+    to {
+        transform: translateX(-100%); 
+    }
+}
+.item {
+    display: inline-block;
+    padding: 0 10px;
+    height: 50px;
+    animation: scrollLeft 5s linear infinite; 
+    color: white;
+    font-family: Consolas;
+}
+/*SCROLL ANIMATION #####################################################################################*/
+
+
+
+#clothing-track > .image{
+    width: 40vmin;
+    height: 57vmin;
+    object-fit: cover;
+    object-position: center;
+    object-position: 100% 50%;
+    border: 1px dashed white;
+    
+}
+
+#clothing-track{
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    margin-top: 31vmin;
+    transform: translate(0%, -50%);
+    
+}

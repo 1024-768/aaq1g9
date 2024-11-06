@@ -1,55 +1,63 @@
 <!DOCTYPE html>
-<html>
     <head>
-        <title>Official TITLE Website</title>
         <link rel="stylesheet" href="styles.css">
+        <meta name="keywords" content="HTML, CSS>
+        <meta name="author" content="Jorho, Crave">
+        <title>Into The Abyss | Abyssheart Official Website</title>
     </head>
-
-    <body>        
-        <nav class="navbar">            
-            <ul>                  
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="">INFORMATION</a></li>
-                <li><a href="">CONTACT</a></li>
-            </ul>
-
-            <div class="wrapper"> 
-                <div class="item item1"><p>ABYSSHEARTED</p></div>
-                <div class="item item2">ABYSSHEARTED</div>
-                <div class="item item3">ABYSSHEARTED</div>
-                <div class="item item4">ABYSSHEARTED</div>
-                <div class="item item5">ABYSSHEARTED</div>
-                <div class="item item6">ABYSSHEARTED</div>
-                <div class="item item7">ABYSSHEARTED</div>
-                <div class="item item8">ABYSSHEARTED</div>
-                
+    <body>
+        <nav class="navbar">
+            <div class="nav-left">
+                <ul>
+                    <li><a href="#" class="hover-effect animatedText">HOME</a></li>
+                    <li><a href="#" class="hover-effect animatedText">INFORMATION</a></li>
+                    <li><a href="#" class="hover-effect animatedText">CONTACT</a></li> 
+                    <li><div class="button" id="bgaudioBtn"></div></li>               
+                </ul>
             </div>
-
-            <button id="togBgAudio" class="btn"><h3 class="btntxt" id="btntxt">▷</h3></button> 
-            
-
-            <ul>
-                <li><a href="pages/login.html">LOGIN</a></li>
-                <li><a href="">REGISTER</a></li>
-            </ul>
-            <div class="logo-container">
-                <img src="resources/images/logo.png" alt="Logo" class="logo">
+            <audio id="bgaudio" src="files/audios/bgaudio.mp3"></audio>
+            <div class="nav-center">
+                <ul>
+                    <li><a></a></li>              
+                </ul>
             </div>
-
-
-
+            <div class="nav-right">
+                <ul>
+                    <div class="scroll-wrap">
+                        <div class="item item1" style="color: white">ABYSSHEARTED</div>
+                        <div class="item item2" style="color: white">ABYSSHEARTED</div>
+                        <div class="item item3" style="color: white">ABYSSHEARTED</div>
+                        <div class="item item4" style="color: white">ABYSSHEARTED</div>
+                        <div class="item item5" style="color: white">ABYSSHEARTED</div>
+                        <div class="item item6" style="color: white">ABYSSHEARTED</div>
+                        <div class="item item7" style="color: white">ABYSSHEARTED</div>
+                        <div class="item item8" style="color: white">ABYSSHEARTED</div>
+                    </div>
+                    <li><a href="webpages/login.html" class="hover-effect animatedText">LOGIN</a></li>
+                    <li><a href="#" class="hover-effect animatedText">REGISTER</a></li>              
+                </ul>
+            </div>
         </nav>
+        <div class="web-body">
+            <div class="vid-container">
+                <video loop autoplay muted>
+                    <source src="files/videos/background-video.mp4">   
+                </video>
+                <h1 class="vid-overlay">CREDITS: @xrronaa ON YOUTUBE</h1>
+            </div>
+            
+        </div>
+        <div class="web-clothing" id="clothing-track" data-mouse-down-at="0" data-prev-percentage="0"> 
+            <img class= "image" src="files/images/clothing/allredshirt.png" draggable="false"> 
+            <img class= "image" src="files/images/clothing/narcissistshirt.png" draggable="false">
+            <img class= "image" src="files/images/clothing/teenxshirt.png" draggable="false">
+            <img class= "image" src="files/images/clothing/y2kshirt.png" draggable="false">   
+            <img class= "image" src="files/images/clothing/y2k.png" draggable="false">  
+            <img class= "image" src="files/images/clothing/iammusic.png" draggable="false">  
+            <img class= "image" src="files/images/clothing/ch.png" draggable="false">  
+        </div>
+        <script src="script.js"></script>   
 
-        <br>        
-        <h1 class="centeredH" style="font-family: AlmaraiB;">"ABYSSHEART"</h1> 
-        
-        
-
-
-
-
-
-        
-        <script src="script.js"></script>
     </body>
+    
 </html>
