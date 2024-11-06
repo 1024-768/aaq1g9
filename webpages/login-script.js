@@ -58,3 +58,68 @@ document.addEventListener('DOMContentLoaded', function(){
     password.addEventListener('input', checkLength);
     checkLength();
 });
+
+//TYPEWRITER RANDOM HOVER ANIM
+function randomChar() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    return chars[Math.floor(Math.random() * chars.length)];
+}
+
+// Main hover animation function
+function typewriterHoverEffect(element) {
+    const originalText = element.getAttribute("data-original");
+    const textLength = originalText.length;
+    element.innerHTML = ''; // Clear current text
+    
+    // Create spans for each character with staggered animation timing
+    originalText.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
+        element.appendChild(span);
+
+        const maxDuration = 1000; // Total animation time in ms
+        const charDuration = (index + 1) * (maxDuration / textLength); // Duration per character
+        const interval = 50; // Interval for random changes
+        let elapsedTime = 0;
+
+        const animateCharacter = setInterval(() => {
+            // Randomize characters up until the designated end time for each character
+            if (elapsedTime < charDuration) {
+                span.textContent = char === ' ' ? '\u00A0' : randomChar();
+            } else {
+                span.textContent = char; // Set original character at end
+                clearInterval(animateCharacter);
+            }
+            elapsedTime += interval;
+        }, interval);
+
+        // Store interval ID to clear it later if the mouse leaves
+        span.dataset.intervalId = animateCharacter;
+    });
+}
+
+// Apply the hover effect to each animated text element
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedTexts = document.querySelectorAll('.animatedText');
+
+    animatedTexts.forEach((animatedText) => {
+        // Set up the original text for reset after each hover
+        animatedText.setAttribute("data-original", animatedText.textContent);
+
+        // Start animation on mouse enter
+        animatedText.addEventListener('mouseenter', function() {
+            typewriterHoverEffect(this);
+        });
+
+        // Reset text and clear intervals on mouse leave
+        animatedText.addEventListener('mouseleave', function() {
+            const originalText = this.getAttribute("data-original");
+            this.innerHTML = originalText; // Reset to original text
+            
+            // Clear all intervals to stop the animation immediately
+            Array.from(this.children).forEach((span) => {
+                clearInterval(span.dataset.intervalId);
+            });
+        });
+    });
+});
